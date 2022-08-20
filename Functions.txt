@@ -1,0 +1,113 @@
+COMBINATION nCr
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+    int r;
+    cin>>r;
+    
+    int i=1;
+    int a1=1;
+    while (i<=n){
+        a1=a1*i;
+        i++;
+    }
+    int j=1;
+    int a2=1;
+    while (j<=r){
+        a2=a2*j;
+        j++;
+    }
+    int k=1;
+    int a3=1;
+    while (k<=(n-r)){
+        a3=a3*k;
+        k++;
+    }
+    float h=a1/(a2*a3);
+    cout<<h;
+}
+
+SEcOND METHOD
+#include <iostream>
+using namespace std;
+int factorial(int n){
+    int i=1;
+    int x=1;
+    while (i<=n){
+        x=x*i;
+        i++;
+    }return x;
+    }
+    
+int main(){
+    int no;
+    cin>>no;
+    int r;
+    cin>>r;
+   float req= factorial(no)/(factorial(r)*factorial(no-r));
+    cout<<req;
+}
+
+CHECKING PRIME
+#include <iostream>
+using namespace std;
+int prime(int n){
+    int d=2;
+    while (d<n){
+        if (n%d==0){
+            return false;
+            
+        }d++;
+    }return true;
+}
+int main(){
+    bool prime1=prime(6);
+    cout<<prime1;
+}
+PRINTING 1 T N NOS
+#include <iostream>
+using namespace std;
+void print(int n){
+
+    for(int d=1;d<=n;d++){
+        cout<<d<<endl;
+    }
+    
+    }
+
+int main(){
+    int n;
+    cout<<"enter n"<<endl;
+    cin>>n;
+   print(n);
+    
+}
+FIBONACCI
+#include <bits/stdc++.h>
+using namespace std;
+
+bool check(int n){
+    int a=0;
+    int b=1;
+    int c;
+    while (a<n){
+        c=a+b;
+        a=b;
+        b=c;
+    }
+    if (a == n){
+        return true;
+    }
+    else{
+        return false;
+    }
+        
+}
+int main(){
+    int n;
+    cin>>n;
+    cout<<check(n);
+}
