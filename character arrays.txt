@@ -1,0 +1,369 @@
+CHECK PALINDROME
+#include <iostream>
+using namespace std;
+
+int length(char input[]){
+    int count=0;
+    for(int i=0; input[i] != '\0';i++){
+        count++;
+    }return count;
+}
+
+bool check(char input[],int n){
+    bool x=true;
+    int i=0;
+    int j=n-1;
+    while(j>i){
+        if(input[i] != input[j]){
+            x=false;
+        }else{
+            x= true;
+        }i++;
+        j--;
+    }
+    if(x==true){
+        cout<<"true";
+        
+    }else{
+        cout<<"false";
+    }
+    
+
+
+}
+    
+
+
+int main() {
+    char b[100];
+    cin>>b;
+    int m=length(b);
+    check (b,m);
+}
+
+REPLACE CHARACTERS
+#include <iostream>
+using namespace std;
+
+int length(char input[]){
+    int count=0;
+    for(int i=0; input[i] != '\0';i++){
+        count++;
+    }return count;
+}
+
+void check(char input[],int n, char a, char b){
+   
+    int i=0;
+    while (i<n){
+        if(input[i]==a){
+            input[i]=b;}
+        i++;
+        
+    }cout<<input;   
+
+
+}
+OR
+void replaceCharacter(char input[], char c1, char c2) {
+    for (int i = 0; input[i] != '\0'; i++) {
+        if (input[i] == c1) {
+            input[i] = c2;
+        }
+    }
+}
+
+    
+
+
+int main() {
+    char b[100];
+    char v,p;
+    cin>>b;
+    cin>>v;
+    cin>>p;
+    int m=length(b);
+    check (b,m,v,p);
+}
+
+
+TAKING INPUT
+int main() {
+    char input[100];
+    cin.getline(input,4);
+    cout<<input<<endl;
+    
+}
+REVERSE STRING
+#include <iostream>
+using namespace std;
+
+int length(char input[]){
+    int count=0;
+    for(int i=0; input[i] != '\0';i++){
+        count++;
+    }return count;
+}
+void reverse(char input[]){
+    int len=length(input);
+    int i=0 ,j=len-1;
+    while(i<j){
+        char temp=input[i];
+        input[i]=input[j];
+        input[j]=temp;
+        i++;
+        j--;
+    }
+}
+    
+
+
+int main() {
+    char input[100];
+    cin.getline(input,100);
+    reverse(input);
+    cout<<input<<endl;
+    
+}
+    
+TRIM SPACES
+#include <iostream>
+using namespace std;
+
+void trimspaces(char input[]){
+    int i=0,j=0;
+    while(input[i] != '\0'){
+        if (input[i]==' '){
+            input[i]=input[i+1];
+        }i++;
+            
+        }
+    }
+    
+
+
+int main() {
+    char input[100];
+    cin.getline(input,100);
+    trimspaces(input);
+    cout<<input<<endl;
+    
+}
+
+OR
+RIMTVIK SOL
+void trimspaces(char input[]){
+   int i=0,j=0;
+    for (i=0; input[i] != '\0'; i++){
+        if(input[i] == ' '){
+            continue;
+        }
+        else{
+            input[j++]=input[i];
+        }
+    }input[j] = '\0';
+}
+    
+REVERSE WORD WISE
+#include <iostream>
+using namespace std;
+
+void reverse(char arr[], int start, int end){
+    while(start<end){
+        char temp=arr[start];
+        arr[start]=arr[end];
+        arr[end]=temp;
+        start++;
+        end--;
+    }
+}
+
+void reverseww(char input[]){
+    int count=0;
+    for(int i=0; input[i] != '\0'; i++){
+        count++;
+        
+    }
+    reverse(input, 0, count-1);
+    int s=0;
+    int e=0;
+    for (int k=0; input[k]!='\0'; k++){
+        if (input[k]==' '){
+            e=k-1;
+            reverse(input,s,e);
+            s=k+1;
+            
+        }
+        
+    }e=count-1;
+    reverse(input,s,e);
+    cout<<input;
+}
+
+int main(){
+    int n;
+    char input[100];
+    cin.getline(input,100);
+    reverseww(input);
+}
+
+PRINTING PREFIXES
+void prefix(char input[]){
+    for(int i=0;input [i]!='\0';i++){
+        for(int j=0;j<=i;j++){
+            cout<<input[j];
+        }cout<<endl;
+    }
+}
+PRINT ALL SUBSTRINGS
+#include <iostream>
+#include<cstring>
+using namespace std;
+void substring(char input[]){
+    for(int i=0; input[i]!='\0';i++){
+        for (int j=i; input[j]!='\0';j++){
+            for(int k=i; k<=j;k++){
+                cout<<input[k];
+            }cout<<endl;
+        }
+    }
+    
+}
+
+int main(){
+    int n;
+    char input1[100];
+    char input2[100];
+    cin>>input1;
+   substring(input1);
+    /*cin>>input2;
+    strncpy(input1,input2,5);
+    cout<<input1;*/ 
+}
+2D ARRAYS
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int a[100][100];
+    int m,n;
+    cin>>m>>n;
+    
+    for(int i=0; i<m;i++){
+        for(int j=0;j<n;j++){
+            cin>>a[i][j];
+        }
+    }for(int i=0; i<m;i++){
+        for(int j=0;j<n;j++){
+            cout<<a[i][j]<<" ";
+}cout<<endl;}}
+
+SUM OF COLUMNWISE ELEMENTS
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int a[100][100];
+    int m,n;
+    cin>>m>>n;
+    for (int i=0; i<m;i++){
+        for (int j=0; j<n; j++){
+            cin>>a[i][j];
+        }
+    }for (int i=0; i<m;i++){
+        for (int j=0; j<n; j++){
+            cout<<a[i][j]<<" ";
+        }cout<<endl;
+    }
+    cout<<endl;
+    
+    for(int j=0;j<n;j++){
+        int sum=0;
+        for (int i=0;i<m;i++){
+            sum=a[i][j]+sum;
+        }cout<<sum<<" ";
+    }
+}
+LARGEST ROW OR COLUMN
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+void largestsum(int input[][100], int nrows, int mcols){
+    int maxrow=INT_MIN;
+    int maxcol=INT_MIN;
+    int colindex,rowindex;
+    int sum=0,i=0,j=0;
+    for( i=0;i<nrows;i++){ 
+        sum=0;
+        
+        for(j=0; j<mcols; j++){
+               sum=sum+input[i][j]; 
+        }
+        if(sum>maxrow){
+            maxrow=sum;
+        rowindex=i;}
+    }
+    for (int i=0;i<mcols;i++){
+        int sum=0;
+        for (int j=0; j<nrows;j++){
+            sum=sum+input[j][i];
+        }if(sum>=maxcol){
+            maxcol=sum;
+            colindex=i;
+        }
+    }if(maxcol>maxrow){
+        cout<<"col"<<" "<<colindex<<" "<<maxcol;
+    }else {
+        cout<<"row"<<" "<<rowindex<<" "<<maxrow;
+    
+}}
+
+
+
+int main(){
+    int a[100][100];
+    int m,n;
+    cin>>m>>n;
+    for (int i=0; i<m; i++){
+        for (int j=0; j<n; j++){
+            cin>>a[i][j];
+        }
+        }
+    largestsum(a,m,n); 
+    
+    
+    }
+
+WAVE PRINT
+#include <iostream>
+using namespace std;
+
+void wave(int input[][100], int rows, int col) {
+    int i,j;
+    for (int j=0; j<col;j++){
+        if(j%2==0){
+            for(int i=0; i<rows; i++){
+                cout<<input[i][j]<<" ";
+            }
+        }else{
+            for(int i=rows-1; i>=0; i--){
+                cout<<input[i][j]<<" ";
+            }
+        }
+    }
+}
+
+int main(){
+    int m,n;
+    cin>>m>>n;
+    int a[100][100];
+    for(int i=0; i<m;i++){
+        for(int j=0; j<n;j++){
+            cin >> a[i][j];
+        }
+    }
+    wave(a, m, n);
+
+}

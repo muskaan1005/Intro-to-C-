@@ -1,0 +1,771 @@
+TAKING ARRAY INPUT
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int b[100];
+    for (int i=0;i<n;i++){
+        cin>>b[i];
+        
+    }
+    for (int i=0; i<n+2;i++){
+        cout<<b[i];
+    }
+}
+LARGEST ELEMENT OF ARR
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int b[100];
+    for (int i=0;i<n;i++){
+        cin>>b[i];
+        
+    }
+    cout<<endl;
+    int max=INT_MIN;
+    for(int i=0;i<n;i++){
+        if (b[i]>max){
+            max=b[i];
+            
+        }
+    }cout<<max<<endl;
+}
+ARRAY SUM
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int b[100];
+    for(int i=0;i<n;i++){
+        cin>>b[i];
+    }cout<<endl;
+    int sum=0;
+    for(int j=0;j<n;j++){
+        sum=sum + b[j];
+        
+    }cout<<sum<<endl;
+}
+LINEAR SEARCH
+#include <iostream>
+using namespace std;
+
+int search(int arr[], int n, int x){
+    for(int i; i<n; i++){
+        if (x==arr[i]){
+            return i;
+        }
+    }return -1;
+  
+}
+
+
+int main(){
+    
+    
+    
+        int n;
+        cin >> n;
+        int k[100];
+        for (int m=0 ; m < n ; m++){
+            cin >> k[m];
+        }
+        int y;
+        cin >> y;
+        int vv = search(k, n, y);
+    cout<<vv;
+      
+    }
+    
+ARRANGE NUMBERS 
+using namespace std;
+void arrange(int arr[],int n){
+    int start=0;
+    int end= n-1;
+    int val=1;
+    while (start<end){
+        arr[start]=val;
+        val++;
+        start++;
+        arr[end]=val;
+        val++;
+        end--;
+        
+    }
+    if (start==end){
+        arr[start]=val;
+    }
+    int k;
+    for(k=0;k<n;k++){
+        cout<<arr[k];
+    }
+}
+int main(){
+    int n;
+    cin>>n;
+    int w[50];
+    arrange(w,n);
+}
+
+REVERSING ARRAY
+#include <iostream>
+using namespace std;
+
+void printarr(int b[], int n){
+    for (int i=0; i < n; i++){
+        cout<<b[i]<<" ";
+        
+    }cout<<endl;
+}
+
+void reverse(int b[],int n){
+    int i=0;
+    int j=n-1;
+    int val;
+    while(i<j){
+        val=b[i];
+        b[i]=b[j];
+        b[j]=val;
+        i++;
+        j--;
+        
+    }
+}
+
+
+int main() {
+   int n;
+    cin>>n; 
+    int array[50];
+    for(int i=0; i<n; i++){
+        cin>>array[i];} 
+        reverse(array, n);
+        printarr(array, n);
+        
+    
+    
+}
+FIND UNIQUE
+int findUnique(int *arr, int size)
+{
+
+    for (int i = 0; i < size; ++i)
+    {
+        int j = 0;
+
+        for (; j < size; j++)
+        {
+            if (i != j && arr[i] == arr[j])
+            {
+                break;
+            }
+        }
+
+        if (j == size)
+        {
+            return arr[i];
+        }
+    }
+}
+FIND DUPLICATE
+int duplicateNumber(int *arr, int size)
+{
+ for(int i; i<size-1 ; i++){
+    
+     for (int j=i+1; j<size; j++){
+         if (i==j){
+             break;
+         }
+         else{
+             if (arr[i] == arr[j]){
+                 return arr[i];
+             }
+         }
+         
+     }
+     
+   
+ }
+    
+
+ARRAY INTERSECTION
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void intersection(int *arr1, int size1, int *arr2, int size2){
+    for (int i=0; i<size1 ;i++){
+        for (int j=0; j<size2 ;j++){
+            if (arr1[i]==arr2[j]){
+                cout<<arr1[i]<<" ";
+                arr2[j]=INT_MIN;
+                break;
+            }
+        }
+    }
+}
+   
+   
+   
+   
+   
+   
+int main() {
+    int n,m;
+    cin>>n;
+    int k[50];
+    for(int j=0; j<n ; j++){
+        cin>>k[j];
+    }
+    cout<<endl;
+    cin>>m;
+    int c[50];
+    for(int h=0; h<m; h++){
+        cin>>c[h];
+    }
+    intersection(k,n,c,m);
+   
+}
+PAIR SUM
+#include <bits/stdc++.h>
+using namespace std;
+
+void pairsum(int *arr, int n, int k){
+    int count=0;
+        for(int i=0; i<n; i++){
+            for(int j=i+1; j<n; j++){
+               
+                    if (arr[i]+arr[j] == k){
+                        count++;
+                    }
+                }
+                   
+                }cout<< count;
+               
+           
+        }
+
+
+ 
+   
+   
+   
+   
+   
+int main(){
+    int n;
+    cin>>n;
+    int b[50];
+    for(int i=0; i<n; i++){
+        cin>>b[i];
+    }
+    cout<<endl;
+    int x;
+    cin>>x;
+    pairsum(b,n,x);
+   
+}
+TRIPLET SUM
+#include <bits/stdc++.h>
+using namespace std;
+
+void pairsum(int *arr, int n, int k){
+    int count=0;
+        for(int i=0; i<n; i++){
+            for(int j=i+1; j<n; j++){
+                for (int h=j+1; h<n; h++)
+               
+                    if (arr[i]+ arr[j]+ arr[h] == k){
+                        count++;
+                    }
+                }
+                   
+                }cout<< count;
+               
+           
+        }
+
+
+ 
+   
+   
+   
+   
+   
+int main(){
+    int n;
+    cin>>n;
+    int b[50];
+    for(int i=0; i<n; i++){
+        cin>>b[i];
+    }
+    cout<<endl;
+    int x;
+    cin>>x;
+    pairsum(b,n,x);
+   
+}
+SORT 0 1
+#include <bits/stdc++.h>
+using namespace std;
+
+void sort(int *arr,int n){
+    for(int i=0; i<n; i++){
+        if (arr[i]==0){
+            cout<<0<<" ";
+        }
+    }
+    for (int j=0; j<n; j++){
+        if (arr[j]==1){
+            cout<<1<<" ";
+        }
+    }
+}
+
+
+
+int main(){
+    int n;
+    cin>>n;
+    int b[50];
+    for (int i=0; i<n ;i++){
+        cin>>b[i];
+    }
+    sort(b,n);
+}
+
+BINARY SEARCH
+int BinarySearch(int arr[], int n, int val){
+    int first = 0;
+    int last = n-1;
+    
+    int middle = (first+last)/2;
+    
+    while(first <= last){
+        if(arr[middle] < val){
+            first = middle + 1;
+        }
+        else if( arr[middle] == val){
+            return middle;
+            break;
+        }
+        else{
+            last = middle - 1;
+            
+        }
+        middle = (first + last)/2;
+    }
+    if(first > last){
+        return -1;
+    }
+}
+SELECTION SORT
+#include <iostream>
+using namespace std;
+
+void selectionSort(int input[],int n){
+    //number of rounds represented by i
+    for (int i=0; i< n-1;i++){
+        
+    
+    int min=input[i];
+    int mindex=i;
+    
+    for (int j=1+i; j<n; j++){
+        if (input[j]<min){
+            min=input[j];
+            mindex=j;
+           
+        }
+    }
+    int temp=input[i];
+    input[i]=input[mindex];
+    input[mindex]=temp;
+}}
+int main(){
+    int n;
+    cin>>n;
+    int array[50];
+    for (int i=0; i<n; i++){
+        cin>>array[i];
+    }
+    selectionSort(array,n);
+    for (int i=0; i<n;i++){
+        cout<<array[i]<<" ";
+    }
+    
+}
+BUBBLE SORT
+#include <bits/stdc++.h>
+using namespace std;
+
+void printArray(int input[], int n){
+    for(int i=0; i<n;  i++){
+        cout<< input[i]<<" ";
+    }cout<<endl;
+}
+
+void bubblesort(int *arr,int n){
+    for(int i=0; i<n-1;i++){
+        
+       
+        int temp;
+        for (int j=0; j<n-1-i;j++){
+            if (arr[j+1]<arr[j]){
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+                
+                
+            }
+            
+        }
+
+}
+    }
+
+int main(){
+    int n;
+    cin>>n;
+    int input[100];
+    for (int i=0; i<n; i++){
+        cin>>input[i];
+    }
+    bubblesort(input,n);
+    printArray(input,n);
+}
+
+INSERTION SORT
+#include <bits/stdc++.h>
+using namespace std;
+
+void printArray(int input[], int n){
+    for(int i=0; i<n;  i++){
+        cout<< input[i]<<" ";
+    }cout<<endl;
+}
+
+void insertionsort(int *arr,int n){
+    //current element i
+    for(int i=1; i<n; i++){
+        int current=arr[i];
+       int j;
+        for (j=i-1;j>=0 ;j--){
+            if (current<arr[j]){
+                arr[j+1]=arr[j];
+                
+            }else{
+                break;
+            }
+        }arr[j+1]=current;
+    }
+   
+    }
+
+int main(){
+    int n;
+    cin>>n;
+    int input[100];
+    for (int i=0; i<n; i++){
+        cin>>input[i];
+    }
+    insertionsort(input,n);
+    printArray(input,n);
+}
+MERGE SORT
+void merge(int arr1[], int size1, int arr2[], int size2, int ans[]){
+    int i = 0, j = 0, k = 0;
+    while(i < size1 && j < size2){ 
+        if(arr1[i] < arr2[j]){ 
+            ans[k++] = arr1[i++]; 
+        }
+        else{
+            ans[k++] = arr2[j++]; 
+        }
+    }
+//if size differnt
+    while(i < size1){ 
+        ans[k++] = arr1[i++];
+    }
+    while(j < size2){ 
+        ans[k++] = arr2[j++]; 
+    }
+}
+PPUSH ZEROES TO END
+void pushZeroesEnd(int *input, int size)
+{int temp=0;
+ int j=0;
+    for(int i=0; i<size; i++){
+        if (input[i]!=0){
+            temp=input[i];
+            input[i]=input[j];
+            input[j]=temp;
+            j++;
+            
+        }
+    }
+}
+ROTATE ARRAY by k
+#include <bits/stdc++.h>
+using namespace std;
+
+void rotatearray(int input[], int n, int k){
+    int j=1;
+    while (j<=k){
+        int temp= input[0];
+        for(int i=0; i<n-1; i++){
+           
+          
+   
+            
+        input[i]=input[i+1];
+        
+            }input[n-1]=temp;
+        j++;
+        
+    
+    }
+}
+void printArray(int input[], int n){
+    for(int i=0; i<n;  i++){
+        cout<< input[i]<<" ";
+    }cout<<endl;
+}
+int main(){
+    int n;
+    n=5;
+    int arr[5]={1, 2, 3, 4, 5};
+    
+    int k;
+    k=2;
+    rotatearray(arr,n,k);
+    printArray(arr,n);
+
+
+}
+SECOND LARGEST
+#include <bits/stdc++.h>
+using namespace std;
+
+int secondlargest(int input[], int n){
+    int largest = INT_MIN;
+    int sl = INT_MIN;
+    for(int i = 0; i < n; i++){
+        if(input[i] > largest){
+            
+            sl = largest;
+            largest = input[i];
+            
+        }
+        else{
+            if(input[i] < largest && input[i] > sl){
+                sl = input[i];
+                
+            }
+        }
+    }return sl;
+   
+    }
+void printArray(int input[], int n){
+    for(int i=0; i<n;  i++){
+        cout<< input[i]<<" ";
+    }cout<<endl;
+}
+int main(){
+   
+    
+    int n=7;
+    int arr[7]={2,13,4,1,3,6,28};
+    
+    
+    
+    cout<<secondlargest(arr,n);
+    
+
+
+}
+CHECKARRAYROTATION
+#include <bits/stdc++.h>
+using namespace std;
+
+int arrayrotation(int input[], int n){
+    int min=input[0];
+    for(int i=0; i<n; i++){
+        if (min>input[i]){
+            min=input[i];
+        }}
+        int count=0;
+        while (input[0] != min){
+            int val = input[0];
+            for(int j=0; j<n-1; j++){
+
+                input[j]=input[j+1];
+              }
+
+            input[n-1]=val;
+            count++;
+        }return count;
+    }
+
+
+    
+void printArray(int input[], int n){
+    for(int i=0; i<n;  i++){
+        cout<< input[i]<<" ";
+    }cout<<endl;
+}
+int main(){
+
+
+    int n=6;
+    int arr[6]={5,6,1,2,3,4};
+
+
+
+    cout<<arrayrotation(arr,n);
+
+
+
+}
+SORT 012
+#include <bits/stdc++.h> 
+void sort012(int *arr, int n)
+{int count1=0;
+ int count2=0;
+ for(int i=0;i<n;i++){
+     if(arr[i]==0){
+         count1++;
+     }
+     if (arr[i]==2){
+         count2++;
+     }
+     
+ }for(int i=0;i<n;i++){
+     for(int j=0; j<count1;j++){
+         arr[j]=0;
+     }
+     for (int k=n-count2; k<n; k++){
+         arr[k]=2;
+     }
+     for (int x=count1; x<n-count2; x++){
+         arr[x]=1;
+     }
+ }
+  
+}
+SUM OF TWO ARRAYS
+#include <bits/stdc++.h>
+using namespace std;
+
+void calsum(int arr1[], int n, int arr2[], int m){
+    
+    int sum1=0;
+    int sum2=0;
+    int x=1;
+    for(int i=n-1; i>=0; i--){
+        sum1= (arr1[i]*x +sum1);
+        x = (x*10);
+    }
+    int p=1;
+   for(int i=m-1; i>=0; i--){
+        sum2= (arr2[i]*p +sum2);
+        p = (p*10);
+    }
+    
+    int SUM=sum1+sum2;
+    int k=0;
+    if(m>=n){
+        k=m+1;
+    }
+    else{
+        k=n+1;
+    }
+    int output[k];
+    if(SUM>=pow(10,k-1)){
+        for (int i=k-1; i>=0; i--){
+            output[i]=SUM%10;
+            SUM=SUM/10;
+        }
+    }
+    else{
+        output[0]=0;
+        for (int i=k-1; i>0; i--){
+            output[i]=SUM%10;
+            SUM=SUM/10;
+        }
+    }for(int i=0; i<k;  i++){
+        cout<< output[i]<<" ";
+    }
+    
+        
+    
+   
+    }
+void printArray(int input[], int n){
+    for(int i=0; i<n;  i++){
+        cout<< input[i]<<" ";
+    }cout<<endl;
+}
+int main(){
+
+
+    int n1=3;
+    int arr1[3]={6,7,8};
+    int n2=3;
+    int arr2[3]={3,8,9};
+
+
+
+    calsum(arr1,n1,arr2,n2);
+
+
+
+}
+or
+#include <bits/stdc++.h>
+using namespace std;
+
+void sum(int arr1[], int n1, int arr2[], int n2){
+    int sum1=0,sum2=0,k,arr[k];
+    for(int i=n1-1;i>=0;i--){
+        sum1=sum1+arr1[i]*pow(10,n1-1-i);
+    }
+    for(int i=n2-1;i>=0;i--){
+        sum2=sum2+arr2[i]*pow(10,n2-1-i);
+    }
+    int sum = sum1+sum2;
+    if(n1==n2){
+        k=n1+1;
+    }
+    else if(n1>n2){
+        k=n1+1;
+    }
+    else{
+        k=n2+1;
+    }
+    if(sum>=pow(10,k-1)){
+        for(int i=k-1;i>=0;i--){
+            arr[i] = sum%10;
+            sum=sum/10;
+        }
+    }
+    else{
+        arr[0]=0;
+        for(int i=k-1;i>0;i--){
+            arr[i] = sum%10;
+            sum=sum/10;
+        }
+    }
+    for(int i=0;i<k;i++){
+        cout << arr[i] << ' ';
+    }
+}
+int main(){
+    int n1=3,n2=3;
+    int arr1[3] = {3,5,7}, arr2[3]={4,5,6};
+    sum(arr1,n1,arr2,n2);
+     
+}
